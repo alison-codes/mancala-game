@@ -1,0 +1,154 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crushed', cursive;
+    margin: 20px;
+    font-size: 22px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 20px, auto;
+    grid-template-areas: 
+    "hdr"
+    "main";
+}
+
+header{
+    grid-area: 'hdr';
+    display: flex;
+    justify-content: space-between;
+    color: #5E4466;
+    font-size: 16px;
+}
+
+main{
+    grid-area: 'main';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+  margin:1em;
+  color:#471C34;
+  font-size: 10vmin;
+  letter-spacing: 0.5vmin;
+}
+
+.board {
+    padding: 1%;
+	display: flex;
+    flex-flow: column;
+    background-image: url("https://parameter-9fcd.kxcdn.com/wp-content/uploads/2017/06/Pine-Wood-Grain-Texture.jpg");
+    background-size: 390%;
+    border-radius: 4%;
+    border: #471C34 solid 6px;
+}
+
+.pits { 
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width:  66.5vw;    
+    height: 62vh;
+}
+
+.pit:hover {
+    background-color: rgba(75, 29, 10, 0.486); 
+}
+
+.player-one-captured, .player-two-captured:hover {
+    cursor: not-allowed;
+}
+
+
+.pit-player-two, .pit-player-one {
+    display: flex;
+    /* color: #6E7784; */
+    flex-direction: column;
+    flex:1;
+    justify-content: space-around;
+}
+
+.pit-player-two{
+    color: #C6B3B3;
+    flex-direction: column;
+}
+
+.pit-player-one{
+    color: rgb(20, 79, 161);
+    flex-direction: column;
+}
+
+
+.player-one-captured, .player-two-captured, .pit {
+	margin: 3% 5%;
+	display: flex;
+	justify-content: center;
+	background-color: rgba(46, 19, 7, 0.486);
+    box-shadow: inset, 0, 0, 2px, rgba(0,0,0,.5);
+    border-radius: 30%;
+}
+
+.new-game-button {
+    background-color: #471C34;
+    border-radius: 10%;
+    text-align: center;
+    color:white;
+    margin: 5px;
+    font-size:  30px;
+    font-family: 'Crushed', cursive;
+}
+
+.player-one-captured, .player-two-captured {
+    flex-direction: column-reverse;
+    text-align: center;
+}
+
+.pit, .player-one-captured, .player-two-captured{
+    border: #471C34 solid 3px;
+}
+
+.player-one-captured{
+    color: #C6B3B3;
+}
+
+.player-two-captured{
+    color: rgb(20, 79, 161);
+}
+
+@media only screen and (min-width: 500px) {
+	body {
+        background-color: violet;
+    }
+     .board {
+        display: flex;
+        flex-flow: row;
+        width: 90%;
+        margin: -50px 0px 0px 0px;
+    }
+
+    .pits { 
+        display: flex;
+        flex-flow: row-reverse;
+        flex-wrap: wrap;
+        width:  80vw;  
+        height: 20vh;
+        
+    }
+    .pit-player-one, .pit-player-two {
+        flex-direction: row-reverse; 
+        flex-wrap: wrap;
+        height:  48%; 
+    }
+
+    .pit{
+        height: 48%; 
+        width: 40%;
+    }
+
+    main {
+        margin: -90px 0px 0px 0px;
+    }
+}    
