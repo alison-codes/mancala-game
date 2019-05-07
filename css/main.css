@@ -44,15 +44,16 @@ h3 {
     flex-flow: column;
     background-image: url(../images/Pine-Wood-Grain-Texture.jpg);
     background-size: cover;
-    border-radius: 4%;
+    /* border-radius: 4%; */
     border: #471C34 solid 6px;
+    border-radius: 18px;
 }
 
 .all-playable-pits { 
 	display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: wrap;
+    padding: 0px;
     /* height: 60vh; */
 }
 
@@ -107,6 +108,7 @@ h3 {
   .rules {
     background-color: rgb(252, 240, 240);
     display: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
 
 .new-game-button {
@@ -133,37 +135,58 @@ h3 {
     color: #EEA225;
 }
 
-@media only screen and (min-width: 600px) {
-	body {
-        background-color: violet;
-        /* height: 90vh;  */
-        }
-     .board {
-        margin: -100px 0px 0px 0px;
-        transform: rotate(90deg);
-        width: 50vh;
-        height: 85vw;
-        background-size: cover;
-    
-    }
-    .pit, .player-one-captured, .player-two-captured {
-        /* max-width: 10vh;
-        height: 10vw; */
-        max-width: 10vh;
-        /* height: 10vw; */
-        transform: rotate(270deg);
+@media only screen and (min-width: 680px) {
+    body {
+        font-size: 30px;
     }
 
-    .player-one-captured, .player-two-captured {
-        /* width: 40vh; */
-        /* max-width: 1vh; */
-        min-height: 10vw;
-        max-width: 12vh;
-        height: 100vh;
+    header {
+        font-size: 16px;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 
-    .all-playable-pits { 
-        height: 100vh;
+    .board {
+        flex-flow: row;
+        width: 90vw;
+        height: 240px;
+        margin: 40px 0px 40px 0px;
+        transform: rotate(180deg)
     }
     
+    .all-playable-pits {
+        flex: 7;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .player-ones-pits, .player-twos-pits {
+        flex: 1;
+        flex-wrap: wrap;
+        flex-direction: column;
+        width: 10vw;
+        align-self: stretch;
+        margin-left: 2vw;
+    }
+    
+    .player-one-captured, .player-two-captured, .pit {
+        margin: 1vw;
+        justify-content: center;
+        width: 8.2vw;
+        height: 250px;
+        transform: rotate(180deg);
+    }
+    
+    .pit {
+        flex: 7;
+    }
+
+    .player-one-captured, .player-two-captured  {
+        flex: 1;
+        height: 190px;
+    }
+     
+    .rules {
+        width: 92vw;
+    }
 }    
