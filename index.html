@@ -13,14 +13,29 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Crushed" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
 
 </head>
 
 <body>
 
     <header>
-        <div>Alison's Mancala Game</div>
-        <div><i class="fas fa-bars"></i></div>
+        <div id="self">Alison's Mancala Game</div>
+        <button class="collapsible">How to play<br></button>
+        <div class="rules">
+            <ol>
+                <p>Objective: Collect more pieces than your opponent.</p>
+                <li>Begin by selecting any pocket on your side. Gray goes first.</li>
+                <li> Moving counter-clockwise, deposit one piece in each subsequent pocket until the pieces run out.</li>
+                <li> If you run into your own Mancala (larger pockets on either side), drop one piece in it. </li>
+                <li>If you run into your opponent's Mancala, skip it.</li>
+                <li>If the last piece you drop is in an empty pocket on your side, capture that piece and any pieces
+                    in the pocket directly opposite.</li>
+                <li> The game ends when all six pockets on one side of the Mancala board are empty.</li>
+                <li> Practice your victory dance and count the number of pieces in each Mancala to determine who won.</li>
+            </ol>
+        </div>
     </header>
 
     <main>
@@ -31,7 +46,7 @@
             </div>
 
             <div class="all-playable-pits">
-                <div class="pit-player-two">
+                <div class="player-ones-pits">
                     <div class="pit" id="pit1">
                         <p></p>
                     </div>
@@ -52,7 +67,7 @@
                     </div>
                 </div>
 
-                <div class="pit-player-one">
+                <div class="player-twos-pits">
                     <div class="pit" id="pit13">
                         <p></p>
                     </div>
