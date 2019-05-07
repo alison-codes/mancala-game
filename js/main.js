@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const startingStonesInPits = 4;
+const STARTINGSTONESINPITS = 4;
 const PLAYERS = {
   '1': 'Player 1',
   '-1': 'Player 2',
@@ -26,9 +26,9 @@ init();
 function init() {
   board = [
     0,
-    startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits,
+    STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS,
     0,
-    startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits, startingStonesInPits,
+    STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS, STARTINGSTONESINPITS,
   ];
   turn = 1;
   winner = null;
@@ -54,22 +54,32 @@ function getPlayer() {
   return PLAYERS[turn];
 }
 
+
+function sleep(milliseconds) {
+  render(); 
+  let start = new Date().getTime();
+  for (i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds) break;
+  }
+}
+
+
 function disallowCursor() {
   pitOneArr = document.querySelectorAll('.player-twos-pits .pit');
   pitTwoArr = document.querySelectorAll('.player-ones-pits .pit');
   setTimeout(function () {
     if (turn === 1) {
       for (i = 0; i < pitOneArr.length; i++) {
-        pitOneArr[i].style.cursor = "not-allowed";
+        pitOneArr[i].style.cursor = 'not-allowed';
       } for (i = 0; i < pitTwoArr.length; i++) {
-        pitTwoArr[i].style.cursor = "auto";
+        pitTwoArr[i].style.cursor = 'auto';
       }
     }
     if (turn === -1) {
       for (i = 0; i < pitTwoArr.length; i++) {
-        pitTwoArr[i].style.cursor = "not-allowed";
+        pitTwoArr[i].style.cursor = 'not-allowed';
       } for (i = 0; i < pitOneArr.length; i++) {
-        pitOneArr[i].style.cursor = "auto";
+        pitOneArr[i].style.cursor = 'auto';
       }
     }
   }, 500);
@@ -105,12 +115,12 @@ function handleClick(evt) {
     captureStones();
     if (pitIdx > 13) pitIdx = 0;
     board[pitIdx]++;
+    sleep(50);
     stonesInHand--;
     pitIdx++;
   }
-  render();
   turn *= -1;
-  whoWon();
+  determineWhoWon();
   if (pitIdx - 1 === 0 || pitIdx - 1 === 7) {
     goAgain = true;
     turn *= -1;
@@ -124,7 +134,8 @@ function render() {
   });
 }
 
-function whoWon() {
+function determineWhoWon() {
+  render();
   if (gameEnd()) {
     let playerOneFinalCount = board[7];
     let playerTwoFinalCount = board[0];
@@ -139,55 +150,54 @@ function whoWon() {
 function gameEnd() {
   let playerOneBoardStones = board.slice(1, 7);
   let playerTwoBoardStones = board.slice(8, 14);
-  let onlyPlayer2CanMove = playerOneBoardStones.every(function (pit) {
+  let stonesCapturedAtEnd = 0;
+  let onlyPlayerOneCanMove = playerTwoBoardStones.every(function (pit) {
     return pit === 0;
   });
-  let onlyPlayerTwoCanMove = playerTwoBoardStones.every(function (pit) {
+  let onlyPlayerTwoCanMove = playerOneBoardStones.every(function (pit) {
     return pit === 0;
   });
-  if (onlyPlayerTwoCanMove) {
-    let stonesCaptured1 = 0;
+  if (onlyPlayerOneCanMove) {
     playerOneBoardStones.forEach(function (num, idx) {
-      // board[14-ind] = 0;
-      stonesCaptured1 += num;
+      stonesCapturedAtEnd += num;
     });
-    board[7] += stonesCaptured1;
-    board = board.fill(0, 1, 6);
-    console.log(board);
-    render();
-    turn *= -1;
+    board[7] += stonesCapturedAtEnd;
+    prepareForFinalCount();
     return true;
   }
-  if (onlyPlayer2CanMove) {
-    let stonesCaptured2 = 0;
-    playerTwoBoardStones.forEach(function (num, ind) {
-      // board[14-ind] = 0;
-      stonesCaptured2 += num;
+  if (onlyPlayerTwoCanMove) {
+    playerTwoBoardStones.forEach(function (num, idx) {
+      stonesCapturedAtEnd += num;
     });
-    board = board.fill(0, 8, 14);
-    board[0] += stonesCaptured2;
-    turn *= -1;
-    render();
+    board[0] += stonesCapturedAtEnd;
+    prepareForFinalCount();
     return true;
   }
 }
 
+function prepareForFinalCount() {
+  board = board.fill(0, 8, 14);
+  board = board.fill(0, 1, 7);
+  turn *= -1;
+  render();
+} 
+
 function toggle() {
   let ruleList = this.nextElementSibling;
-  selfEl.style.display === "block" ? (
-    selfEl.style.display = "none", 
-    ruleList.style.display = "block"
-  ) : 
-  (selfEl.style.display = "block",  
-  ruleList.style.display = "none")
+  selfEl.style.display === 'block' ? (
+    selfEl.style.display = 'none',
+    ruleList.style.display = 'block'
+  ) :
+    (selfEl.style.display = 'block',
+      ruleList.style.display = 'none')
 }
 
 function toggleOff() {
   let ruleList = this;
-  selfEl.style.display === "block" ? (
-    selfEl.style.display = "none", 
-    ruleList.style.display = "block"
-  ) : 
-  (selfEl.style.display = "block",  
-  ruleList.style.display = "none")
+  selfEl.style.display === 'block' ? (
+    selfEl.style.display = 'none',
+    ruleList.style.display = 'block'
+  ) :
+    (selfEl.style.display = 'block',
+      ruleList.style.display = 'none')
 }
