@@ -1,8 +1,8 @@
 /*----- constants -----*/
-const STARTINGSTONESINPITS = 2;
+const STARTINGSTONESINPITS = 4;
 const PLAYERS = {
-  '1': 'Player 1',
-  '-1': 'Player 2',
+  '1': 'Orange',
+  '-1': 'Pink',
 };
 
 /*----- cached element references -----*/

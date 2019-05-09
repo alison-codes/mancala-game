@@ -1,219 +1,206 @@
 *, *::after, *::before {
     box-sizing: border-box;
- }
+}
 
- body {
-    font-family: 'Crushed', cursive;
-    font-size: 22px;
-    height: 80vh;
-    display: grid;
-    grid-template-rows: 20px, auto;
-    grid-template-areas: "hdr" "main";
-    /* text-align: center; */
- }
+body {
+   font-family: 'Crushed', cursive;
+   font-size: 22px;
+   height: 80vh;
+   display: grid;
+   grid-template-rows: 20px, auto;
+   grid-template-areas: "hdr" "main";
+}
 
- .green {
-    color: green
-////delete me!!!
- }
- 
- .lightblue {
-    color: lightblue;
- }
 
- header {
-    grid-area: 'hdr';
-    display: flex;
-    justify-content: space-between;
-    color: #5E4466;
-    font-size: 14px;
-    font-family: 'Crushed', cursive;
- }
+header {
+   grid-area: 'hdr';
+   display: flex;
+   justify-content: space-between;
+   color: #5E4466;
+   font-size: 14px;
+   font-family: 'Crushed', cursive;
+}
 
- main {
-    grid-area: 'main';
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- }
+main {
+   grid-area: 'main';
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
 
- h2 {
-    color: #471C34;
-    font-size: 7vmin;
-    letter-spacing: 0.5vmin;
-    margin: 3px;
-    text-align: center;
- }
- 
- h3 {
-    margin: 2px;
-    color: #471C34;
-    font-size: 5vmin;
- }
+h2 {
+   color: #471C34;
+   font-size: 7vmin;
+   letter-spacing: 0.5vmin;
+   margin: 3px;
+   text-align: center;
+}
 
- p {
-    text-align: center;
- }
+h3 {
+   margin: 2px;
+   color: #471C34;
+   font-size: 5vmin;
+}
 
- .board {
-    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-    padding: 1%;
-    width: 65vw;
-    display: flex;
-    flex-flow: column;
-    background-image: url(../images/Pine-Wood-Grain-Texture.jpg);
-    background-size: cover;
-    border: #471C34 solid 6px;
-    border-radius: 18px;
-    font-weight: 600;
- }
+p {
+   text-align: center;
+}
 
- .all-playable-pits {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0px;
- }
+.board {
+   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+   padding: 1%;
+   width: 65vw;
+   display: flex;
+   flex-flow: column;
+   background-image: url(../images/Pine-Wood-Grain-Texture.jpg);
+   background-size: cover;
+   border: #471C34 solid 6px;
+   border-radius: 18px;
+   font-weight: 900;
+}
 
- .pit:hover {
-    background-color: rgba(75, 29, 10, 0.486);
- }
+.all-playable-pits {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+}
 
- .player-one-captured, .player-two-captured:hover {
-    cursor: not-allowed;
- }
+.pit:hover {
+   background-color: rgba(75, 29, 10, 0.486);
+}
 
- .player-ones-pits, .player-twos-pits {
-    display: flex;
-    width: 25vw;
-    flex-direction: column;
-    justify-content: space-around;
-    color: #FFA01C;
- }
+.player-one-captured, .player-two-captured:hover {
+   cursor: not-allowed;
+}
 
- .player-one-captured, .player-two-captured, .pit {
-    display: flex;
-    justify-content: center;
-    background-color: rgba(46, 19, 7, 0.486);
-    border-radius: 30%;
-    height: 7.5vh;
-    box-shadow: 0px -1px 0px px #471C34;
-    box-shadow: #471C34 -2px -2px;
-    margin: .8vh 0vh;
-    align-items: center;
-    border: #471C34 solid 3px;
- }
+.player-ones-pits, .player-twos-pits {
+   display: flex;
+   width: 25vw;
+   flex-direction: column;
+   justify-content: space-around;
+   color: #FFA01C;
+}
 
- .collapsible {
-    background-color: #C6B3B3;
-    font-family: 'Crushed', cursive;
-    color: #471C34;
-    font-size: 15px;
- }
- 
- .active, .collapsible:hover {
-    background-color: rgb(155, 139, 139);
- }
+.player-one-captured, .player-two-captured, .pit {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(46, 19, 7, 0.486);
+   border-radius: 30%;
+   height: 7.5vh;
+   box-shadow: 0px -1px 0px px #471C34;
+   box-shadow: #471C34 -2px -2px;
+   margin: .8vh 0vh;
+   border: #471C34 solid 3px;
+}
 
- .rules {
-    background-color: rgb(252, 244, 253);
-    display: none;
-    font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
- }
+.collapsible {
+   background-color: #C6B3B3;
+   font-family: 'Crushed', cursive;
+   color: #471C34;
+   font-size: 15px;
+}
 
- .new-game-button {
-    background-color: #471C34;
-    border-radius: 10%;
-    color: white;
-    margin: 10px;
-    font-size: 30px;
-    font-family: 'Crushed', cursive;
-    display: none;
- }
+.active, .collapsible:hover {
+   background-color: rgb(155, 139, 139);
+}
 
- .new-game-button:hover {
-    color: #471C34;
-    background-color: #D6C9C9;
- }
+.rules {
+   background-color: rgb(252, 244, 253);
+   display: none;
+   font-family: Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+}
 
- .player-one-captured, .player-two-captured {
-    margin: 0 5%;
-    color: #FFA01C;
- }
+.new-game-button {
+   background-color: #471C34;
+   border-radius: 10%;
+   color: white;
+   margin: 10px;
+   font-size: 30px;
+   font-family: 'Crushed', cursive;
+   display: none;
+}
 
- .all-playable-pits {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 0px;
- }
+.new-game-button:hover {
+   color: #471C34;
+   background-color: #D6C9C9;
+}
 
- .player-twos-pits, .player-two-captured {
-    color: #FAA6FF;
- }
+.player-one-captured, .player-two-captured {
+   margin: 0 5%;
+   color: #FFA01C;
+}
 
- @media only screen and (min-width: 680px) {
-    body {
-       font-size: 30px;
-    }
+.all-playable-pits {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   padding: 0px;
+}
 
-    header {
-       font-size: 16px;
-       padding-right: 10px;
-       padding-left: 10px;
-    }
+.player-twos-pits, .player-two-captured {
+   color: #FAA6FF;
+}
 
-    h2 {
-        font-size: 8vmin;
-    }
+@media only screen and (min-width: 680px) {
+   body {
+      font-size: 30px;
+   }
 
-    .board {
-       flex-flow: row;
-       width: 90vw;
-       height: 290px;
-       margin: 40px 0px 40px 0px;
-       /* transform: rotate(180deg) */
-    }
+   header {
+      font-size: 16px;
+      padding-right: 10px;
+      padding-left: 10px;
+   }
 
-    .all-playable-pits {
-       flex: 7;
-       flex-direction: column-reverse;
-    }
+   h2 {
+      font-size: 9vmin;
+   }
 
-    .player-ones-pits, .player-twos-pits {
-       flex-wrap: wrap;
-       flex-direction: column;
-       width: 10vw;
-       min-height: 11vmin;
-       align-self: stretch;
-       margin-left: 2vw;
-       min-height: 11vmin;
-    }
+   .board {
+      flex-flow: row;
+      width: 90vw;
+      height: 290px;
+      margin: 40px 0px 40px 0px;
+   }
 
-    .player-one-captured, .player-two-captured, .pit {
-       margin: 1vw;
-       justify-content: center;
-       width: 8.2vw;
-       /* transform: rotate(180deg); */
-    }
+   .all-playable-pits {
+      flex: 7;
+      flex-direction: column-reverse;
+   }
 
-    .pit {
-       flex: 7;
-       min-height: 11vmin;
-    }
-    
-    .player-one-captured, .player-two-captured {
-       flex: 1;
-       height: 240px;
-       margin: 1vh;
-    }
+   .player-ones-pits, .player-twos-pits {
+      flex-wrap: wrap;
+      flex-direction: column;
+      width: 10vw;
+      min-height: 11vmin;
+      align-self: stretch;
+      margin-left: 2vw;
+   }
 
-    .rules {
-       width: 92vw;
-    }
+   .player-one-captured, .player-two-captured, .pit {
+      margin: 1vw;
+      justify-content: center;
+      width: 8.2vw;
+   }
 
-    .new-game-button {
-       margin: 0px;
-       font-size: 40px;
-    }
- }
+   .pit {
+      flex: 7;
+      min-height: 11vmin;
+   }
+   
+   .player-one-captured, .player-two-captured {
+      flex: 1;
+      height: 240px;
+      margin: 1vh;
+   }
+
+   .rules {
+      width: 92vw;
+   }
+
+   .new-game-button {
+      margin: 0px;
+      font-size: 40px;
+   }
+}
