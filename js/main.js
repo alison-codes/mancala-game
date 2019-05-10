@@ -131,7 +131,7 @@ async function moveStones(pitIdx, stonesInHand) {
 		} else {
 			moveStones(pitIdx, stonesInHand);
 		}
-	}, 420)
+	}, 410)
 }
 
 function captureStones(stonesInHand, pitIdx) {

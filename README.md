@@ -7,7 +7,9 @@ Mancala is an ancient board game dating back to the 6th century that rewards str
 
 ![Web Version](https://i.imgur.com/LY75Hp1.png "Full Screen Version")
 
-![Mobile Version](https://i.imgur.com/PtuTBb1.png?1  "Mobile Web Version")
+<p align="center"> 
+<img src="https://i.imgur.com/PtuTBb1.png?1">
+</p>
 
 ## Rules
   * Set Up: Players sit across from each other with the board between them. Each player is allocated pockets closest to her and a larger scoring bin, called a mancala, to the right. Four stones are placed in each of the 12 smaller pockets.

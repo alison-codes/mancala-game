@@ -149,8 +149,8 @@ p {
 
    header {
       font-size: 16px;
-      padding-right: 10px;
-      padding-left: 10px;
+      padding-right: 7px;
+      padding-left: 7px;
    }
 
    h2 {
@@ -186,7 +186,7 @@ p {
 
    .pit {
       flex: 7;
-      min-height: 11vmin;
+      min-height: 14vmin;
    }
    
    .player-one-captured, .player-two-captured {
@@ -203,4 +203,14 @@ p {
       margin: 0px;
       font-size: 40px;
    }
+
+   @media (max-height: 388px) {
+      .pit {
+         min-height: 30vmin;
+      }  
+
+      .board {
+         margin: 0px 0px 0px 0px;
+      }
+   } 
 }
