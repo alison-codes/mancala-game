@@ -1,6 +1,6 @@
 # Mancala Project
 ## Overview
-Mancala is an ancient board game dating back to the 6th century that rewards strategic thinking. In the game, two players compete to collect as many stones as possible before one of the players clears her side of all its stones.
+Mancala is an ancient board game dating back to the 6th century that rewards strategic thinking. In the game, two players compete to collect as many stones as possible before one of the players clears her side of all its stones. Complete rules are listed below and accessible in live game play. 
 
 [Launch the online game here.](https://alison-codes.github.io/mancala-game/)
 

@@ -186,7 +186,7 @@ p {
 
    .pit {
       flex: 7;
-      min-height: 14vmin;
+      min-height: 12vmin;
    }
    
    .player-one-captured, .player-two-captured {

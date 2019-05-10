@@ -48,11 +48,11 @@ function displayMsg() {
   if (winner) {
     if (winner === 'T') {
       largerMsgEl.textContent = 'Stalemate.';
-      smallerMsgEl.textContent = 'Play again?';
+      smallerMsgEl.textContent = 'End of Game. Play again?';
     }
     else {
       largerMsgEl.textContent = `Well done, ${winner}!`;
-      smallerMsgEl.textContent = 'Play again?';
+      smallerMsgEl.textContent = 'End of Game. Play again?';
     }
   } else if (goAgain) {
     largerMsgEl.textContent = `${currentPlayer}'s Turn Again`;
@@ -110,7 +110,9 @@ async function moveStones(pitIdx, stonesInHand) {
 			pitIdx = 8;
 		}
 		if (pitIdx === 13 && turn === -1) {
-			pitIdx = 0;
+      pitIdx = 0;
+      board[0]--;
+      board[13]++;
 		}
 		board[pitIdx]++;
 		stonesInHand--;
