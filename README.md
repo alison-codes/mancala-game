@@ -1,15 +1,17 @@
 # Mancala Project
 ## Overview
 Mancala is an ancient board game dating back to the 6th century that rewards strategic thinking.
+![Web Version](/images/Web-Screen-Shot.png?raw=true "Full Screen Version")
+![Mobile Version](/images/Mobile-Screen-Shot.png?raw=true "Mobile Web")
 
-## Screenshots
 
 ## Getting Started
+[Launch the game here.](https://alison-codes.github.io/mancala-game/)
 
 ## Rules
   * Object: Two players compete to collect as many stones as possible before one of the players clears her side of all its stones.
 
-  * Set Up: Players sit facing each other with the board between them. Each player is allocated pockets closest to her and a larger scoring bin, called a mancala, to the right. Four stones are placed in each of the 12 smaller pockets.  
+  * Set Up: Players sit across from each other with the board between them. Each player is allocated pockets closest to her and a larger scoring bin, called a mancala, to the right. Four stones are placed in each of the 12 smaller pockets.
 
   * Play: The first player picks up all the stones in any of her six pockets. She distributes them one by one around the board in a counterclockwise motion, including her own mancala, but not the opponent’s mancala. If the player places the last stone in her own mancala, she receives an additional turn. If the last stone is placed in an empty pocket on the player’s own side, she captures that stone and all the stones in the opponent’s pocket directly across. 
 
@@ -22,6 +24,5 @@ Mancala is an ancient board game dating back to the 6th century that rewards str
 
 ## Future Development
   * Add AI (player vs computer)
-  * Add a visual representation of the game pieces instead that corresponds to the number pieces per pocket
-  * Animate the movement of the pieces as they move counter-clockwise
-
+  * Add a visual representation of the game pieces corresponding to the number pieces per pocket
+  
