@@ -113,16 +113,23 @@ async function moveStones(pitIdx, stonesInHand) {
       pitIdx = 0;
       board[0]--;
       board[13]++;
+      console.log(turn);
 		}
 		board[pitIdx]++;
 		stonesInHand--;
 		renderNumbers();
 		if (stonesInHand === 0) {
 			captureStones(stonesInHand, pitIdx);
-			if (pitIdx === 7 || pitIdx === 0) {
+			if (pitIdx === 7 || (pitIdx === 0 && turn === 1)) {
 				goAgain = true;
 				turn *= -1;
-			}
+      }
+      // if (pitIdx === 0 && turn === 1) {
+			// 	goAgain = true;
+			// 	turn *= -1;
+      // }
+
+
 			displayMsg();
 			goAgain = false;
 			if (gameEnd()) {
